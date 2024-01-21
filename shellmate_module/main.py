@@ -5,7 +5,6 @@ import argparse
 from openai import OpenAI
 from dotenv import dotenv_values
 config = dotenv_values(".env")
-# Load OpenAI API key from environment variable
 client = OpenAI(api_key=config["OPENAI_API_KEY"])
 def explain_command(command, os):
     """
