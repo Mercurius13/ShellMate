@@ -68,8 +68,8 @@ def main():
 
     # Custom examples section
     parser.epilog = 'Examples:\n' \
-                    '  python main.py explain "ls -l" -os linux\n' \
-                    '  python main.py find "how to see disk usage" -os windows\n'
+                    '  shellmate explain "ls -l" -os linux\n' \
+                    '  shellmate find "how to see disk usage" -os windows\n'
 
     if len(sys.argv) == 1:
         parser.print_help()
