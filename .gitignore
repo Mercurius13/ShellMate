@@ -1,1 +1,10 @@
 .env
+dist/ShellMate-1.0.0-py3-none-any.whl
+dist/ShellMate-1.0.0.tar.gz
+build/lib/shellmate_module/__init__.py
+build/lib/shellmate_module/main.py
+ShellMate.egg-info/dependency_links.txt
+ShellMate.egg-info/entry_points.txt
+ShellMate.egg-info/PKG-INFO
+ShellMate.egg-info/SOURCES.txt
+ShellMate.egg-info/top_level.txt
