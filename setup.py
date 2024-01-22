@@ -8,7 +8,7 @@ setup(
     description='ShellMate: A GPT-Powered CLI Tool for Explaining and Finding Shell Commands', 
     long_description=open('readme.md').read(),  
     long_description_content_type='text/markdown',  
-    url='https://github.com/SidmoGoesBrrr/ShellMate',  
+    url='https://github.com/Mercurius13/ShellMate',  
     packages=find_packages(), 
     install_requires=[
         'openai',
