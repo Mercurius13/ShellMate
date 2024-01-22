@@ -90,5 +90,5 @@ def main():
     print(result)
 
 
-if __name__ == "__shellmate__":
+if __name__ == "__main__":
     main()
