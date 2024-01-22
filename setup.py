@@ -16,7 +16,7 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'shellmate=shellmate_module.main:main', 
+            'shellmate=shellmate_module.shellmate:shellmate', 
         ],
     },
     classifiers=[
