@@ -41,7 +41,7 @@ def query_openai(prompt):
     return response
 
 
-def main():
+def shellmate():
     parser = argparse.ArgumentParser(
         description="ShellMate: Your GPT-Powered Shell Assistant",
         add_help=False,
@@ -90,5 +90,5 @@ def main():
     print(result)
 
 
-if __name__ == "__main__":
-    main()
+if __name__ == "__shellmate__":
+    shellmate()
