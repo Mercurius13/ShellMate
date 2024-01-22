@@ -13,6 +13,7 @@ setup(
     install_requires=[
         'openai',
         'argparse',
+        'python-dotenv',
     ],
     entry_points={
         'console_scripts': [
