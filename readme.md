@@ -23,7 +23,7 @@ That's it! No complex setups, just a simple pip command.
 
 # How to Use ShellMate
 
-## Setting you API key.
+## Setting your API key
 ```bash
 shellmate set_api_key <YOU_OPENAI_API_KEY_HERE>
 ```
