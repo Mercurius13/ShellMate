@@ -5,10 +5,21 @@ from openai import OpenAI
 from dotenv import load_dotenv, find_dotenv
 
 
-def set_api_key(api_key):
-    with open(find_dotenv(), 'a') as env_file:
-        env_file.write(f'\nOPENAI_API_KEY={api_key}')
-    return f"Your OpenAI api key has been set as: {api_key}"
+def set_openai_api_key(api_key):
+    dotenv_path = find_dotenv(usecwd=False)
+    existing_content = ""
+    if os.path.exists(dotenv_path):
+        with open(dotenv_path, 'r') as env_file:
+            existing_content = env_file.read()
+
+    if f'OPENAI_API_KEY=' in existing_content:
+        updated_content = existing_content.replace(
+            f'OPENAI_API_KEY={os.environ["OPENAI_API_KEY"]}', f'OPENAI_API_KEY={api_key}')
+    else:
+        updated_content = f'{existing_content}\nOPENAI_API_KEY={api_key}'
+
+    with open(dotenv_path, 'w') as env_file:
+        env_file.write(updated_content)
 
 
 load_dotenv(find_dotenv())
