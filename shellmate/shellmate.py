@@ -2,7 +2,7 @@ import os
 import sys
 import argparse
 from openai import OpenAI
-from dotenv import load_dotenv, find_dotenv
+from dotenv import find_dotenv
 
 
 def set_api_key(api_key):
@@ -12,13 +12,11 @@ def set_api_key(api_key):
 
 
 try:
-    load_dotenv(find_dotenv())
     client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
 except:
     print("You need to set your api key first.")
     api_key = input("Please enter your OpenAI API key: ").strip()
     set_api_key(api_key)
-    client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
 
 
 def explain_command(command, os):
