@@ -18,6 +18,7 @@ jobs:
       with:
         python-version: 3.6  # Replace with the desired Python version
 
+
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
@@ -29,7 +30,11 @@ jobs:
     - name: ShellMate Publish
       env:
         TWINE_USERNAME: ZeroAndOne
+
+
+
         TWINE_PASSWORD: KUW4ksA6s9JmPWp
+
       run: |
         python -m pip install --upgrade twine
         twine upload dist/*
