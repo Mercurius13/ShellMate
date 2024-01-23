@@ -37,6 +37,7 @@ def query_openai(prompt):
         print("You need to set your api key first.")
         api_key = input("Please enter your OpenAI API key: ").strip()
         set_api_key(api_key)
+        client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
     
     completion = client.chat.completions.create(
         model='gpt-3.5-turbo',
