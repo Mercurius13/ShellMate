@@ -6,10 +6,19 @@ from dotenv import load_dotenv, find_dotenv
 
 
 def set_api_key(api_key):
-    load_dotenv(find_dotenv())
     with open(find_dotenv(), 'a') as env_file:
         env_file.write(f'\nOPENAI_API_KEY={api_key}')
     return f"Your OpenAI api key has been set as: {api_key}"
+
+
+load_dotenv(find_dotenv())
+try:
+    client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
+except:
+    print("You need to set your api key first.")
+    api_key = input("Please enter your OpenAI API key: ").strip()
+    set_api_key(api_key)
+    client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
 
 
 def explain_command(command, os):
@@ -32,14 +41,6 @@ def query_openai(prompt):
     """
     Send a query to OpenAI's GPT model and return the response.
     """
-    load_dotenv(find_dotenv())
-    try:
-        client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
-    except:
-        print("You need to set your api key first.")
-        api_key = input("Please enter your OpenAI API key: ").strip()
-        set_api_key(api_key)
-        client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
     
     completion = client.chat.completions.create(
         model='gpt-3.5-turbo',
