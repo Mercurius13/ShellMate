@@ -40,13 +40,16 @@ def query_openai(prompt):
     """
     Send a query to OpenAI's GPT model and return the response.
     """
-    completion = client.chat.completions.create(
-        model='gpt-3.5-turbo',
-        messages=[
-            {'role': 'user', 'content': prompt}
-        ],
-        max_tokens=75,
-    )
+    try:
+        completion = client.chat.completions.create(
+            model='gpt-3.5-turbo',
+            messages=[
+                {'role': 'user', 'content': prompt}
+            ],
+            max_tokens=75,
+        )
+    except NameError:
+        return "Now try running your command again."
 
     response = completion.choices[0].message.content
     return response
