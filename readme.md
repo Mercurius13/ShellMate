@@ -23,6 +23,12 @@ That's it! No complex setups, just a simple pip command.
 
 # How to Use ShellMate
 
+## Setting you API key.
+```bash
+shellmate set_api_key <YOU_OPENAI_API_KEY_HERE>
+```
+And even if you forget to this and just start running commands, you will first be asked to enter your apikey. You can also change your api key with this command.
+
 ## Need a Command Reminder?
 ```bash
 shellmate explain "ls -l" -os linux
