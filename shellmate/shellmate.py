@@ -2,10 +2,11 @@ import os
 import sys
 import argparse
 from openai import OpenAI
-from dotenv import find_dotenv
+from dotenv import load_dotenv, find_dotenv
 
 
 def set_api_key(api_key):
+    load_dotenv(find_dotenv())
     with open(find_dotenv(), 'a') as env_file:
         env_file.write(f'\nOPENAI_API_KEY={api_key}')
     return f"Your OpenAI api key has been set as: {api_key}"
