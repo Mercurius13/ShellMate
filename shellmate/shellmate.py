@@ -1,12 +1,22 @@
 import os
 import sys
-import openai
 import argparse
 from openai import OpenAI
-from dotenv import dotenv_values
+from dotenv import load_dotenv, find_dotenv, dotenv_values
 
-config = dotenv_values(".env")
-client = OpenAI(api_key=config["OPENAI_API_KEY"])
+
+def set_api_key(api_key):
+    with open(find_dotenv(), 'a') as env_file:
+        env_file.write(f'\nOPENAI_API_KEY={api_key}')
+
+
+try:
+    load_dotenv(find_dotenv())
+    client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
+except:
+    print("You need to set your api key first.")
+    api_key = input("Please enter your OpenAI API key: ").strip()
+    set_api_key(api_key)
 
 
 def explain_command(command, os):
