@@ -17,6 +17,7 @@ except:
     print("You need to set your api key first.")
     api_key = input("Please enter your OpenAI API key: ").strip()
     set_api_key(api_key)
+    client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
 
 
 def explain_command(command, os):
