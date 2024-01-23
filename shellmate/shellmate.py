@@ -11,15 +11,6 @@ def set_api_key(api_key):
     return f"Your OpenAI api key has been set as: {api_key}"
 
 
-try:
-    client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
-except:
-    print("You need to set your api key first.")
-    api_key = input("Please enter your OpenAI API key: ").strip()
-    set_api_key(api_key)
-    client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
-
-
 def explain_command(command, os):
     """
     Explain a given command using GPT, for the specified OS.
@@ -40,6 +31,13 @@ def query_openai(prompt):
     """
     Send a query to OpenAI's GPT model and return the response.
     """
+    try:
+        client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
+    except:
+        print("You need to set your api key first.")
+        api_key = input("Please enter your OpenAI API key: ").strip()
+        set_api_key(api_key)
+    
     completion = client.chat.completions.create(
         model='gpt-3.5-turbo',
         messages=[
