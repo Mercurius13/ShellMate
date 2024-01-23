@@ -97,6 +97,8 @@ def shellmate():
         result = explain_command(args.input, args.os)
     elif args.command == 'find':
         result = find_command(args.input, args.os)
+    elif args.command == 'set_api_key':
+        result = set_api_key(args.input)
     print(result)
 
 
