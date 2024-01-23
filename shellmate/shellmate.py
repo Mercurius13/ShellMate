@@ -8,6 +8,7 @@ from dotenv import load_dotenv, find_dotenv
 def set_api_key(api_key):
     with open(find_dotenv(), 'a') as env_file:
         env_file.write(f'\nOPENAI_API_KEY={api_key}')
+    return f"Your OpenAI api key has been set as: {api_key}"
 
 
 try:
