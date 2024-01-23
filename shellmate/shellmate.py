@@ -58,18 +58,13 @@ def shellmate():
         formatter_class=argparse.RawTextHelpFormatter
     )
     parser.add_argument(
-        'api_key',
-        choices=['set_api_key'],
-        help="Command to set your OpenAI api key."
-    )
-    parser.add_argument(
         'command',
-        choices=['explain', 'find'],
-        help="Command to execute:\n  explain - Explain a command.\n  find - Find a command based on a description."
+        choices=['explain', 'find', 'set_api_key'],
+        help="Command to execute:\n  explain - Explain a command.\n  find - Find a command based on a description.\n  set_api_key - Set your OpenAI api key."
     )
     parser.add_argument(
         'input',
-        help="Input to the command:\n  For 'explain' - The command to explain.\n  For 'find' - The description to find the command for."
+        help="Input to the command:\n  For 'explain' - The command to explain.\n  For 'find' - The description to find the command for.\n  For 'set_api_key' - Your OpenAI api key."
     )
     parser.add_argument(
         '-os',
