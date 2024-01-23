@@ -2,7 +2,7 @@ import os
 import sys
 import argparse
 from openai import OpenAI
-from dotenv import load_dotenv, find_dotenv, dotenv_values
+from dotenv import load_dotenv, find_dotenv
 
 
 def set_api_key(api_key):
