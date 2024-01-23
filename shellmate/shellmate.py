@@ -32,6 +32,7 @@ def query_openai(prompt):
     """
     Send a query to OpenAI's GPT model and return the response.
     """
+    load_dotenv(find_dotenv())
     try:
         client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
     except:
