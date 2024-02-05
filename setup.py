@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='ShellMate',  
-    version='1.0.2', 
+    version='1.0.6', 
     author='Siddhant', 
     author_email='siddhant@zodevelopers.com', 
     description='ShellMate: A GPT-Powered CLI Tool for Explaining and Finding Shell Commands', 
